@@ -1,0 +1,94 @@
+<view style="width:750rpx;height:20rpx;background:#f5f5f5"></view>
+<view>
+  <view class="mode_selection">
+    <view class="mode_view {{mode_index==0?'activity':''}}" bindtap="change_mode" data-mode_index="0">实时监测</view>
+    <view class="mode_view {{mode_index==1?'activity':''}}" bindtap="change_mode" data-mode_index="1">单数据检测</view>
+    <view></view>
+  </view>
+</view>
+<view hidden="{{mode_index!=0}}">
+  <view class="top_part">
+    <view class="ipt_body">
+    </view>
+    <view class="func_list">
+      <view class="func_item" bindtap="startTest_btn">
+        <image src="../../images/tool/start.png"></image>
+        <view>开始测试</view>
+      </view>
+      <view class="func_item" bindtap="stopTest_btn">
+        <image src="../../images/tool/stop.png"></image>
+        <view>停止测试</view>
+      </view>
+    </view>
+
+  </view>
+  <view style="width:750rpx;height:30rpx;background:#f5f5f5"></view>
+  <view class="console">
+      <view>Console:</view>
+      <view style="padding-top: 20rpx;padding-bottom:50rpx">{{tip}}</view>
+  </view>
+  <view class="console1">
+      <view>监测结果显示:</view>
+      <view style="padding-top: 10rpx;padding-bottom:10rpx;font-size: 32rpx;">{{tip1}}</view>
+      <view style="padding-top: 10rpx;padding-bottom:10rpx;font-size: 32rpx;">{{tip2}}</view>
+      <view style="padding-top: 10rpx;padding-bottom:10rpx;font-size: 32rpx;">{{tip3}}</view>
+      <view style="padding-top: 10rpx;padding-bottom:10rpx;font-size: 32rpx;">{{tip4}}</view>
+      <view style="padding-top: 10rpx;padding-bottom:10rpx;font-size: 32rpx;">{{tip5}}</view>
+      <view style="padding-top: 10rpx;padding-bottom:10rpx;font-size: 32rpx;">{{tip6}}</view>
+      <!-- <view style="padding-top: 20rpx;padding-bottom:45rpx">{{tip_str}}</view> -->
+  </view>
+  <view style="width:750rpx;height:20rpx;background:#f5f5f5"></view>
+  <view class="tip_info" >
+      <!-- <text>样本数：{{itemNum}}</text>
+      <text>训练进度：{{progress}}</text> -->
+      <text class='marright'>实时监测时间:{{minute}}分{{second}}秒</text>
+  </view>
+</view>
+
+
+
+
+<view hidden="{{mode_index!=1}}">
+  <view class="top_part">
+    <view class="ipt_body">
+    </view>
+    <view class="func_list">
+      <view class="func_item" bindtap="startTest_2_btn">
+        <image src="../../images/tool/start.png"></image>
+        <view>开始测试</view>
+      </view>
+      <!-- <view class="func_item" bindtap="stopTest_2_btn">
+        <image src="../../images/tool/stop.png"></image>
+        <view>停止测试</view>
+      </view> -->
+    </view>
+
+  </view>
+  <view style="width:750rpx;height:30rpx;background:#f5f5f5"></view>
+  <view class="console">
+      <view>Console:</view>
+      <view style="padding-top: 20rpx;padding-bottom:50rpx">{{tip_2}}</view>
+  </view>
+  <!-- <view class="console1">
+      <view>监测结果显示:</view>
+      <view style="padding-top: 10rpx;padding-bottom:10rpx;font-size: 32rpx;">{{tip1}}</view>
+      <view style="padding-top: 10rpx;padding-bottom:10rpx;font-size: 32rpx;">{{tip2}}</view>
+      <view style="padding-top: 10rpx;padding-bottom:10rpx;font-size: 32rpx;">{{tip3}}</view>
+      <view style="padding-top: 10rpx;padding-bottom:10rpx;font-size: 32rpx;">{{tip4}}</view>
+      <view style="padding-top: 10rpx;padding-bottom:10rpx;font-size: 32rpx;">{{tip5}}</view>
+      <view style="padding-top: 10rpx;padding-bottom:10rpx;font-size: 32rpx;">{{tip6}}</view>
+      <view style="padding-top: 20rpx;padding-bottom:45rpx">{{tip_str}}</view>
+   </view> -->
+  <view style="width:750rpx;height:20rpx;background:#f5f5f5"></view>
+  <view class="tip_info" >
+      <!-- <text>样本数：{{itemNum}}</text>
+      <text>训练进度：{{progress}}</text> -->
+      <text class='marright'>测试数据采集时间:{{minute_2}}分{{second_2}}秒</text>
+  </view>
+</view>
+
+
+<view class="mask" hidden="{{!showMask}}" bindtap="hiddenMaskBtn"></view>
+<view class="storageFile_box" hidden="{{!showMask}}">
+  <treeView model='{{ treeData }}' bind:tapitem='tapItem'></treeView>
+</view>

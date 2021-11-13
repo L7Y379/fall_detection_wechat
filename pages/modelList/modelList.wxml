@@ -1,0 +1,16 @@
+<view class="files" style="padding-bottom: {{(SystemInfo.screenHeight - SystemInfo.safeArea.bottom)*pixelRatio}}rpx;">
+    <view class="file_list">
+      <block wx:for="{{modelList}}">
+        <view class="file_item" bindtap="fileDetail" bindlongpress="deleteModel">
+          <image src="../../images/tool/model.png"></image>
+          <view>
+            <text>{{item.name}}</text>
+            <text decode="true">createTime: {{item.createTime}}</text>
+          </view>
+        </view>
+      </block>
+    
+    </view>
+  </view>
+
+  <view style="width:750rpx;height:{{(SystemInfo.screenHeight - SystemInfo.safeArea.bottom)*pixelRatio}}rpx;background: #ffffff;position: fixed;bottom: 0;"></view>

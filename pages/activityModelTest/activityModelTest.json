@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "模型测试",
+  "usingComponents": {
+    "ec-canvas": "../../ec-canvas/ec-canvas",
+    "treeView":"../treeView/treeView"
+  }
+}

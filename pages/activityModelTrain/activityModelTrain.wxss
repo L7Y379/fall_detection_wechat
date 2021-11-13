@@ -1,0 +1,108 @@
+/* pages/modelTrain/modelTrain.wxss */
+.storageFile{
+  display: flex;
+  padding: 15rpx 10rpx;
+}
+.storageFile>text:first-child{
+  flex: 0 0 400rpx;
+}
+.storageFile>text:last-child{
+  flex: 1;
+}
+
+.top_part{
+  color: #4b4b4b;
+  width: 750rpx;
+  height: 550rpx;
+  background: #ffffff;
+  /* border-bottom-left-radius: 30rpx;
+  border-bottom-right-radius: 30rpx; */
+}
+.model_name_ipt{
+  padding: 30rpx 50rpx;
+}
+.model_name_ipt>input{
+  line-height: 120rpx;
+  font-size: 35rpx;
+}
+.other_setting{
+  display: flex;
+  margin-top: 20rpx;
+}
+.ipt_body{
+  width: 670rpx;
+  padding: 10rpx 10rpx;
+  padding-bottom: 10rpx;
+  display: flex;
+}
+
+.ipt_body>input{
+  flex: 1;
+  line-height: 100rpx;
+  height: 80rpx;
+  border-bottom: 1rpx solid #eeeeee;
+  font-size: 35rpx;
+  text-align: center;
+}
+.other_setting>input{
+  height: 70rpx;
+  font-size: 35rpx;
+  text-align: center;
+}
+.func_list{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+.console{
+  padding: 30rpx 20rpx;
+  padding-bottom: 10rpx;
+  word-break: break-all;
+}
+.func_item{
+  padding: 20rpx 30rpx;
+  flex: 0 0 250rpx;
+  font-size: 40rpx;
+  text-align: center;
+}
+.func_item>image{
+  width: 180rpx;
+  height: 180rpx;
+}
+.func_item>view{
+  padding-top: 10rpx;
+}
+.tip_info{
+  font-size: 30rpx;
+  display: flex;
+  line-height: 100rpx;
+  background: #ffffff;
+  padding: 0 5rpx;
+}
+/* .tip_info>text{
+} */
+.console_body{
+  background: #ffffff;
+}
+
+
+.mask{
+  position: fixed;
+  top: 0;
+  width: 750rpx;
+  height: 100%;
+  background: #aaaaaa;
+  z-index: 100;
+  opacity: 0.7;
+}
+.storageFile_box{
+  position: fixed;
+  width: 600rpx;
+  height: 60%;
+  left: 50rpx;
+  top:20%;
+  background: #ffffff;
+  z-index: 200;
+  padding: 25rpx;
+  font-size: 28rpx;
+}

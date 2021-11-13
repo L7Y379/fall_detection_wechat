@@ -1,0 +1,75 @@
+<view>
+  <view class="file_title">
+    <text>My Files</text>
+  </view>
+  <view class="summary">
+    <view class="s_left">
+      <view class="circle circle1"></view>
+      <view class="circle circle2"></view>
+      <view class="circle circle3"></view>
+      <view class="piece"></view>
+    </view>
+    <view class="s_right">
+      <view class="s_right_item">
+        <view class="dot1"></view>
+        <view class="s_right_item_mid">数据类型</view>
+        <view>{{myFileInfo.datatype_num}}</view>
+      </view>
+      <view class="s_right_item">
+        <view class="dot2"></view>
+        <view class="s_right_item_mid">数据量</view>
+        <view>{{myFileInfo.item_num}}</view>
+      </view>
+      <view class="s_right_item">
+        <view class="dot3"></view>
+        <view class="s_right_item_mid">模型数量</view>
+        <view>{{myFileInfo.model_num}}</view>
+      </view>
+    </view>
+  </view>
+  
+  <view class="files">
+    <view class="content_title">
+      <view>Dataset</view>
+      <!-- <image src="../../images/tool/add.png" bindtap="add_content" data-newfiletype="0"></image> -->
+    </view>
+    <view class="file_list">
+      <block wx:for="{{myFileInfo.dataset_list}}">
+        <view class="file_item" bindtap="fileDetail" bindlongpress="deleteFile" data-contenttype="0"  data-index="{{index}}"> 
+          <image src="../../images/tool/fileLogo.png"></image>
+          <view>
+            <text>{{item.name}}</text>
+            <view>
+              <text decode="{{true}}">Folder:&nbsp;{{item.folder_num}}</text>
+              <text decode="{{true}}">Items:&nbsp;{{item.item_num}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="files">
+    <view class="content_title">
+      <view>Model</view>
+      <!-- <image src="../../images/tool/add.png" bindtap="add_content" data-newfiletype="1"></image> -->
+    </view>
+    <view class="file_list">
+      <block wx:for="{{myFileInfo.model_list}}">
+        <view class="file_item" bindtap="modelList_btn" bindlongpress="deleteFile2" data-contenttype="1" data-index="{{index}}">
+          <image src="../../images/tool/model.png"></image>
+          <view>
+            <text>{{item.name}}</text>
+            <!-- <view>
+              <text decode="{{true}}">Folder:&nbsp;{{item.folder_num}}</text>
+              <text decode="{{true}}">Items:&nbsp;{{item.item_num}}</text>
+            </view> -->
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+
+<modal hidden="{{hiddenmodalput}}" title="新建文件夹" confirm-text="提交" cancel-text="取消" bindcancel="filename_ipt_cancel" bindconfirm="filename_ipt_confirm"> 
+ <input type='text'placeholder="请输入文件名称" auto-focus bindinput="filename_ipt" value="{{newFileName}}"/>
+</modal>

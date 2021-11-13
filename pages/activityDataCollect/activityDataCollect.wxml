@@ -1,0 +1,58 @@
+<View class="MainBody" style="height:{{SystemInfo.windowHeight-tabbarHeight}}px;">
+  <view class="ipt_body">
+    <!-- <input type="text" placeholder="数据类型(0表示跌倒动作，1表示非跌倒动作)" value="{{type}}" bindinput="ipttype"/> -->
+    <!-- <button bindtap="aaa">aaaa:</button> -->
+    <text>数据类型:</text>
+    <!-- <text bindtap="showMaskBtn">{{storagePath.name}}</text> -->
+      <picker bindchange="bindPickerChange" value="{{type}}" range="{{array}}">
+        <view class="picker">
+          {{array[type]}}
+        </view>
+      </picker>
+      <!-- <block wx:for="{{array}}" wx:key="index">
+        <view>{{item}}</view>
+      </block> -->
+      
+  </view>
+  <view class="ipt_body">
+    <input type="text" placeholder="文件名" value="{{filename}}" bindinput="iptname"/>
+    <text style="height:100rpx;line-height:100rpx">-</text>
+    <input type="text" placeholder="存放路径" value="{{path}}" bindinput="iptIndex"/>  
+  </view>
+  
+  
+
+  <view class="contral_block">
+    <view class="btns">
+      <view bindtap="startCollect">Start</view>
+      <text class='marright'>采集时间:{{minute}}分{{second}}秒</text>
+      <view bindtap="stopCollect">Stop</view>
+    </view>
+  </view>
+  <!-- <view>
+    <view class="dddd" catchtouchmove="nothing"></view>
+    <scroll-view scroll-x="{{true}}" style=" white-space: nowrap; display: flex" scroll-into-view="{{current_chart}}">
+
+      <view class="echart" id="amplitude">
+        <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+      </view>
+      <view class="echart" id="phase">
+        <ec-canvas id="mychart-dom-bar1" canvas-id="mychart-bar1" ec="{{ ec1 }}" ></ec-canvas>
+      </view> 
+    </scroll-view>
+  </view> -->
+  <!-- <view class="graphs_choose">
+      <view class="{{graph_index==0?'activity_graph':''}}" bindtap="change_garph" data-graph_index="0">幅值</view>
+      <view class="{{graph_index==1?'activity_graph':''}}" bindtap="change_garph" data-graph_index="1">相位</view>
+  </view> -->
+  <view class="console">
+      <view>Console:</view>
+      <view style="padding-top: 20rpx;padding-bottom:100rpx">{{tip}}</view>
+  </view>
+</View>
+<view style="width: 750rpx;height:{{SystemInfo.screenHeight - SystemInfo.safeArea.bottom}}px;position: fixed;bottom: 0;background: #ffffff;"></view>
+
+<view class="mask" hidden="{{!showMask}}" bindtap="hiddenMaskBtn"></view>
+<view class="storageFile_box" hidden="{{!showMask}}">
+  <treeView model='{{ treeData }}' bind:tapitem='tapItem'></treeView>
+</view>

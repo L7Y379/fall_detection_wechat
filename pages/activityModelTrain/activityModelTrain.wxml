@@ -1,0 +1,55 @@
+<view>
+  <view class="top_part">
+    <view class="ipt_body">
+      <view class="storageFile"><text>选择训练数据文件夹:</text>
+      <picker bindchange="bindPickerChange" value="{{type}}" range="{{array}}">
+        <view class="picker">
+          {{array[type]}}
+        </view>
+      </picker>
+      </view>
+    </view>
+    <view class="ipt_body">
+      <input type="text" placeholder="输入保存模型名称" value="{{filename}}" bindinput="model_name_ipt"/>
+      <!-- <text style="height:100rpx;line-height:100rpx">-</text> --> 
+    </view>
+    <view class="func_list">
+      <view class="func_item" bindtap="startTrain_btn">
+        <image src="../../images/tool/start.png"></image>
+        <view>开始训练</view>
+      </view>
+      <view class="func_item" bindtap="stopTrain_btn">
+        <image src="../../images/tool/stop.png"></image>
+        <view>停止训练</view>
+      </view>
+    </view>
+  </view>
+  <view style="width:750rpx;height:30rpx;background:#f5f5f5"></view>
+  <view class="tip_info" >
+      <text style="width:190rpx">样本数：{{len_dir}}</text>
+      <text style="width:300rpx">训练进度：{{epoch}}/{{epochs}}</text>
+      <text style="width:210rpx">准确率：{{acc}}%</text>
+  </view>
+  <view class="console">
+      <view>Console:</view>
+      <view style="padding-top: 20rpx;padding-bottom:50rpx">{{tip}}</view>
+      <view style="padding-top: 20rpx;padding-bottom:50rpx">{{tip1}}</view>
+  </view>
+  <view class="tip_info" >
+      <!-- <text>样本数：{{itemNum}}</text>
+      <text>训练进度：{{progress}}</text> -->
+      <text class='marright'>训练时间:{{minute}}分{{second}}秒</text>
+  </view>
+  <scroll-view scroll-y="true" showScrollbar="false" class="console_body" style="height:{{windowHeight - (SystemInfo.screenHeight - SystemInfo.safeArea.bottom) - 580/pixelRatio}}px">
+    <view style="width:700rpx;margin: 25rpx">
+      <block wx:for="{{console_msg}}"> 
+        <text>{{item}}\n</text>
+      </block>
+    </view>
+  </scroll-view>
+</view>
+
+<view class="mask" hidden="{{!showMask}}" bindtap="hiddenMaskBtn"></view>
+<view class="storageFile_box" hidden="{{!showMask}}">
+  <treeView model='{{ treeData }}' bind:tapitem='tapItem'></treeView>
+</view>

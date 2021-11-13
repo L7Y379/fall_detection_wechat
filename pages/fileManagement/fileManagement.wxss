@@ -1,0 +1,146 @@
+/* pages/fileManagement/fileManagement.wxss */
+.file_title{
+  font-size: larger;
+  font-weight: bold;
+  width: 700rpx;
+  padding-left: 50rpx;
+}
+.summary{
+  display: flex;
+}
+.s_left{
+  position: relative;
+  flex: 0 0 300rpx;
+}
+.circle{
+  position: absolute;
+  border-radius: 50%;
+}
+.circle1{
+  width: 150rpx;
+  height: 150rpx;
+  border:6rpx solid#6666CC;
+  box-shadow: 0 0 5rpx 5rpx #6666CC;
+  top: 40rpx;
+  left: 50rpx;
+}
+.circle2{
+  width: 110rpx;
+  height: 110rpx;
+  border:6rpx solid #33CC66;
+  box-shadow: 0 0 5rpx 5rpx #33CC66;
+  top: 60rpx;
+  left: 70rpx;
+}
+.circle3{
+  width: 70rpx;
+  height: 70rpx;
+  border:6rpx solid #FFCC66;
+  box-shadow: 0 0 5rpx 5rpx #FFCC66;
+  top: 80rpx;
+  left: 90rpx;
+}
+
+.piece{
+  position: absolute;
+  width:160rpx;
+  height:160rpx;
+  background: linear-gradient(60deg, #ffffff 63.4%, transparent 63.4%),  50% 0;
+  background-repeat: no-repeat;
+  background-size: 50% 50%;
+  border-radius: 50%;
+  top: 35rpx;
+  left: 45rpx;
+  transform: rotate(15deg);
+}
+.s_right{
+  flex: 1;
+  padding-top: 40rpx;
+  height: 230rpx;
+}
+.s_right_item{
+  display: flex;
+  font-size: 30rpx;
+  color: #4b4b4b;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.s_right_item_mid{
+  padding-left: 10rpx;
+  flex: 0 0 200rpx;
+}
+.dot1{
+  flex: 0 0 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  box-shadow: 0 0 5rpx 5rpx #6666CC;
+  background: #6666CC;
+  margin: 15rpx;
+}
+.dot2{
+  flex: 0 0 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  box-shadow: 0 0 5rpx 5rpx #33CC66;
+  background: #33CC66;
+  margin: 15rpx;
+}
+.dot3{
+  flex: 0 0 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  box-shadow: 0 0 5rpx 5rpx #FFCC66;
+  background: #FFCC66;
+  margin: 15rpx;
+}
+.files{
+  margin-top: 20rpx;
+}
+.content_title{
+  padding: 0 50rpx;
+  font-size: larger;
+  font-weight: bold;
+  display: flex;
+  line-height: 50rpx;
+}
+.content_title>image{
+  margin: 5rpx;
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  right: 50rpx;
+}
+.file_item{
+  padding: 20rpx 50rpx;
+  width: 650rpx;
+  display: flex;
+  color: #4b4b4b;
+}
+.file_item>image{
+  flex: 0 0 120rpx;
+  height: 120rpx;
+}
+.file_item>view{
+  display: flex;
+  flex-direction: column;
+  padding-left: 30rpx;
+}
+.file_item>view>text:first-child{
+  font-size: 32rpx;
+  line-height: 60rpx;
+  flex: 0 0 60rpx;
+  width: 500rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.file_item>view>view{
+  font-size: 26rpx;
+  line-height: 40rpx;
+  flex: 0 0 40rpx;
+  width: 500rpx;
+}
+.file_item>view>view>text{
+  display: inline-block;
+  width: 220rpx;
+}
+

@@ -1,0 +1,65 @@
+<view class="main_body">
+  <view class="setting_item">
+    <text>连接设置</text>
+    <view class="item_ipts">
+      <view class='ip_item'>
+        <text>服务器地址</text>
+        <view>
+          <input type="text" placeholder="IP" value="{{server_ip}}" bindinput="server_ip_ipt"/>
+          <text>:</text>
+          <input type="text" placeholder="Port" value="{{server_port}}" bindinput="server_port_ipt"/>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- <view class="setting_item">
+    <text>呼吸检测</text>
+    <view class="item_ipts">
+      <view class='single_ipt_item'>
+        <text>发射天线数</text>
+        <input type="text" placeholder="请输入天线数"/>
+      </view>
+      <view class='single_ipt_item'>
+        <text>接收天线数</text>
+        <input type="text" placeholder="请输入天线数"/>
+      </view><view class='single_ipt_item'>
+        <text>采样频率</text>
+        <input type="text" placeholder="请输入频率"/>
+      </view>
+    </view>
+  </view>
+  <view class="setting_item">
+    <text>活动识别</text>
+    <view class="item_ipts">
+      <view class='single_ipt_item'>
+        <text>发射天线数</text>
+        <input type="text" placeholder="请输入天线数"/>
+      </view>
+      <view class='single_ipt_item'>
+        <text>接收天线数</text>
+        <input type="text" placeholder="请输入天线数"/>
+      </view><view class='single_ipt_item'>
+        <text>采样频率</text>
+        <input type="text" placeholder="请输入频率"/>
+      </view>
+    </view>
+  </view>
+  <view class="setting_item">
+    <text>定位</text>
+    <view class="item_ipts">
+      <view class='single_ipt_item'>
+        <text>发射天线数</text>
+        <input type="text" placeholder="请输入天线数"/>
+      </view>
+      <view class='single_ipt_item'>
+        <text>接收天线数</text>
+        <input type="text" placeholder="请输入天线数"/>
+      </view><view class='single_ipt_item'>
+        <text>采样频率</text>
+        <input type="text" placeholder="请输入频率"/>
+      </view>
+    </view>
+  </view> -->
+</view>
+
+<view class="btn" bindtap="btn_connect">保存</view>

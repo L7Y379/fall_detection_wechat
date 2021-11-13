@@ -1,0 +1,28 @@
+<view>
+  <image src="../../images/banner1.jpg" class="banner" mode="aspectFill"></image>
+
+
+  <view class="item">
+    <view class="title">跌倒检测</view>
+    <view class="function_items">
+      <view class="fc_item" bindtap="activity_data_collect">
+        <image src="../../images/home/collect.png"></image>
+        <text>数据采集</text>
+      </view>
+      <view class="fc_item"  bindtap="pre_data_btn">
+        <image src="../../images/home/fileSelect.png"></image>
+        <text>数据预处理</text>
+      </view>
+      <view class="fc_item" bindtap="activity_model_train">
+        <image src="../../images/home/train.png"></image>
+        <text>模型训练</text>
+      </view>
+      <view class="fc_item" bindtap="activity_model_test">
+        <image src="../../images/home/test.png"></image>
+        <text>模型测试</text>
+      </view>
+    </view>
+  </view>
+
+</view>
+<view class="btn" bindtap="btn_connect">{{link_msg}}</view>

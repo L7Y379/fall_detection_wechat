@@ -1,0 +1,10 @@
+<view>
+  <view style="line-height: 60rpx;">
+    <text wx:if='{{ isBranch }}' bindtap='toggle'>{{ open ? '[ - ]' : '[ + ]' }} </text>
+    <text wx:else>[ · ] </text>
+    <text bindtap='tapItem' data-path='{{ model.path }}'>{{ model.text }}</text>
+  </view>
+  <view style='padding-left: 50rpx;' wx:if='{{ isBranch }}' hidden='{{ !open }}'>
+    <treeView wx:for='{{ model.nodes }}' wx:key='id' model='{{ item }}'></treeView>
+  </view>
+</view>

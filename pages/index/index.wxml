@@ -1,0 +1,30 @@
+<!--index.wxml-->
+<!-- <view class="sss">
+  <view class="echart">
+    <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+  </view>
+  <view class="echart" hidden="{{!index}}">
+    <ec-canvas id="mychart-dom-bar1" canvas-id="mychart-bar1" ec="{{ ec1 }}" ></ec-canvas>
+  </view> 
+</view> -->
+
+<view>
+  <view class="dddd" catchtouchmove="nothing"></view>
+
+  <scroll-view scroll-x="{{true}}" style=" white-space: nowrap; display: flex" bindscroll="bindscrollaa" scroll-into-view="{{current}}">
+
+  <view class="echart" id="aaa">
+    <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+  </view>
+  <view class="echart" id="bbb">
+    <ec-canvas id="mychart-dom-bar1" canvas-id="mychart-bar1" ec="{{ ec1 }}" ></ec-canvas>
+  </view> 
+  <view class="echart" id="ccc">
+    <ec-canvas id="mychart-dom-bar2" canvas-id="mychart-bar2" ec="{{ ec2 }}" ></ec-canvas>
+  </view> 
+  </scroll-view>
+</view>
+
+<button bindtap="switchBtn1">dasdas</button>
+<button bindtap="switchBtn2">dasdas</button>
+<button bindtap="switchBtn3">dasdas</button>

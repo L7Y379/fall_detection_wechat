@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "数据采集",
+  "usingComponents": {
+    "ec-canvas": "../../ec-canvas/ec-canvas",
+    "treeView":"../treeView/treeView"
+  }
+}

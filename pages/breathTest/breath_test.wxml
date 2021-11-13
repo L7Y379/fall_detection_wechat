@@ -1,0 +1,39 @@
+<View class="MainBody" style="padding-bottom: {{(SystemInfo.screenHeight - SystemInfo.safeArea.bottom)}}px;">
+  <view class="contral_block">
+    <view class="btns">
+      <view bindtap="startCollect">Start</view>
+      <text class='marright'>采集时间：{{time_num}} s</text>
+      <view bindtap="stopCollect">Stop</view>
+    </view>
+  </view>
+  <!-- <view class="echart">
+    <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+  </view> -->
+  <view>
+    <view class="dddd" catchtouchmove="nothing"></view>
+    <scroll-view scroll-x="{{true}}" style=" white-space: nowrap; display: flex" scroll-into-view="{{current_chart}}">
+
+      <view class="echart" id="amplitude">
+        <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+      </view>
+      <view class="echart" id="phase">
+        <ec-canvas id="mychart-dom-bar1" canvas-id="mychart-bar1" ec="{{ ec1 }}" ></ec-canvas>
+      </view> 
+    </scroll-view>
+  </view>
+  <view class="graphs_choose">
+      <view class="{{graph_index==0?'activity_graph':''}}" bindtap="change_garph" data-graph_index="0">幅值</view>
+      <view class="{{graph_index==1?'activity_graph':''}}" bindtap="change_garph" data-graph_index="1">相位</view>
+  </view>
+  <!-- <view class="console">
+      <view>Console:</view>
+      <view style="padding-top: 20rpx;padding-bottom:100rpx">{{tip}}</view>
+  </view> -->
+    <scroll-view scroll-y="true" showScrollbar="false" class="console_body" style="height:{{windowHeight*2/3}}px">
+      <view style="width:700rpx;margin: 25rpx;word-wrap: break-word;">
+        <view>Console:</view>
+        <text>{{tip}}</text>
+      </view>
+    </scroll-view>
+</View>
+<view style="width: 750rpx;height:{{SystemInfo.screenHeight - SystemInfo.safeArea.bottom}}px;position: fixed;bottom: 0;background: #ffffff;"></view>

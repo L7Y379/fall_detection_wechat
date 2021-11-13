@@ -1,0 +1,17 @@
+<view>
+  <block wx:for="{{datList}}">
+    <view class="dat_item" bindtap="change_selecte_state" data-index="{{index}}">
+    <image src="{{item.selected?'../../images/tool/selected.png':'../../images/tool/circle.png'}}"></image>
+    <image src="../../images/tool/txtLogo.png" class="text_logo"></image>
+    <text>{{item.name}}</text>
+  </view>
+  </block>
+
+</view>
+
+<view style="width:750rpx;height:{{(SystemInfo.screenHeight - SystemInfo.safeArea.bottom)*pixelRatio + 120}}rpx"></view>
+
+<view class="bottomFun" style="height:{{(SystemInfo.screenHeight - SystemInfo.safeArea.bottom)*pixelRatio + 100}}rpx" bindtap="addAddressBtn">
+  <view class="btn1" bindtap="deleteFilesBtn">删除所选</view>
+  <view class="btn2" bindtap="select_all_btn">{{is_select_all?'取消全选':'全选'}}</view>
+</view>

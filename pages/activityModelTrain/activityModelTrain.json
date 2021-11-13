@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "模型训练",
+  "usingComponents": {
+    "treeView":"../treeView/treeView"
+  }
+}

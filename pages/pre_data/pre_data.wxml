@@ -1,0 +1,54 @@
+<!--pages/pre_data/pre_data.wxml-->
+<view>
+  <view class="top_part">
+    <view class="ipt_body">
+      <view class="storageFile"><text>选择预处理文件夹:</text>
+      <picker bindchange="bindPickerChange" value="{{type}}" range="{{array}}">
+        <view class="picker">
+          {{array[type]}}
+        </view>
+      </picker>
+      </view>
+    </view>
+    <view class="func_list">
+      <view class="func_item" bindtap="startpre_btn">
+        <image src="../../images/tool/start.png"></image>
+        <view>开始预处理</view>
+      </view>
+      
+    </view>
+  </view>
+  
+  <view style="width:750rpx;height:30rpx;background:#f5f5f5"></view>
+  <view class="tip_info1" >
+      <text>处理进度：处理数据{{len_now}}/{{len_all}}所有数据</text>
+  </view>
+  <view class="console">
+      <view style="padding-top: 10rpx;padding-bottom:20rpx;font-size:35rpx">正在预处理文件夹：{{data_path}}</view>
+      <view style="padding-top: 10rpx;padding-bottom:20rpx;font-size:35rpx">预处理后数据存放文件夹：{{dirPath_pre}}</view>
+  </view>
+
+  <view class="console">
+      <view>Console:</view>
+      <view style="padding-top: 10rpx;padding-bottom:20rpx">{{tip}}</view>
+      <view style="padding-top: 10rpx;padding-bottom:20rpx">{{tip2}}</view>
+  </view>
+  <view class="tip_info" >
+      <!-- <text>样本数：{{itemNum}}</text>
+      <text>训练进度：{{progress}}</text> -->
+      <text class='marright'>处理时间:{{minute}}分{{second}}秒</text>
+  </view>
+  <scroll-view scroll-y="true" showScrollbar="false" class="console_body" style="height:{{windowHeight - (SystemInfo.screenHeight - SystemInfo.safeArea.bottom) - 580/pixelRatio}}px">
+    <view style="width:700rpx;margin: 25rpx">
+      <block wx:for="{{console_msg}}"> 
+        <text>{{item}}\n</text>
+      </block>
+    </view>
+  </scroll-view>
+</view>
+
+<view class="mask" hidden="{{!showMask}}" bindtap="hiddenMaskBtn"></view>
+<view class="storageFile_box" hidden="{{!showMask}}">
+  <treeView model='{{ treeData }}' bind:tapitem='tapItem'></treeView>
+  <view>{{treeData.text}}</view>
+</view>

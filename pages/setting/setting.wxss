@@ -1,0 +1,64 @@
+/* page{
+  background: #f5f5f5;
+} */
+
+.main_body{
+  padding: 25rpx 0;
+}
+.setting_item{
+  padding: 25rpx 25rpx 0 25rpx;
+  background: #ffffff;
+}
+.setting_item>text{
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.ip_item{
+  display: flex;
+  margin-top: 20rpx;
+}
+.item_ipts{
+  padding: 25rpx;
+  font-size: 30rpx;
+}
+.ip_item>text{
+  flex: 0 0 200rpx;
+  text-align: center;
+}
+.ip_item>view{
+  display: flex;
+  text-align:  center;
+}
+.ip_item>view>input:first-child{
+  flex: 0 0 300rpx;
+}
+.ip_item>view>input:last-child{
+  flex: 0 0 150rpx;
+}
+
+.single_ipt_item{
+  display: flex;
+  margin-top: 20rpx;
+}
+.single_ipt_item>text{
+  flex: 0 0 200rpx;
+  text-align: center;
+}
+.single_ipt_item>input{
+  flex: 1;
+  text-align: center;
+}
+
+
+.btn{
+  background: #93dd9b;
+  font-size: 30rpx;
+  width: 650rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align:center;
+  border-radius: 40rpx;
+  margin: 50rpx;
+  opacity: 0.8;
+  box-shadow: 0 0 10rpx #93dd9b;
+}

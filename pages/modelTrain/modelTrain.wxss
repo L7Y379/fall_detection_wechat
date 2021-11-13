@@ -1,0 +1,45 @@
+/* pages/modelTrain/modelTrain.wxss */
+.top_part{
+  color: #4b4b4b;
+  width: 750rpx;
+  height: 300rpx;
+  background: #ffffff;
+  /* border-bottom-left-radius: 30rpx;
+  border-bottom-right-radius: 30rpx; */
+}
+.model_name_ipt{
+  padding: 30rpx 50rpx;
+}
+.model_name_ipt>input{
+  line-height: 120rpx;
+  font-size: 35rpx;
+}
+.func_list{
+  display: flex;
+}
+.func_item{
+  padding: 20rpx 0;
+  flex: 0 0 250rpx;
+  font-size: 28rpx;
+  text-align: center;
+}
+.func_item>image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.func_item>view{
+  padding-top: 10rpx;
+}
+.tip_info{
+  font-size: 28rpx;
+  display: flex;
+  line-height: 100rpx;
+  background: #ffffff;
+  padding: 0 25rpx;
+}
+.tip_info>text{
+  flex: 1;
+}
+.console_body{
+  background: #ffffff;
+}
