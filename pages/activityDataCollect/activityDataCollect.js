@@ -79,41 +79,41 @@ Page({
     })
     
     //接收服务器消息
-    // app.globalData.localSocket.onMessage(function(res) {
-    //   // console.log('收到服务器内容', res)
-    //   res = JSON.parse(res.data)
-    //   console.log(res)
-    //   if(res.code==1){
-    //     console.log("ssssssssasf")
-    //     var chart = that.selectComponent('#mychart-dom-bar').chart
-    //     var option = chart.getOption()
-    //     option.series[0]={
-    //       type: 'line',
-    //       symbol:'none',
-    //       smooth: true,
-    //       data:res.data.amplitude
-    //     }
-    //     chart.setOption(option)
+    app.globalData.localSocket.onMessage(function(res) {
+      // console.log('收到服务器内容', res)
+      res = JSON.parse(res.data)
+      console.log(res)
+      if(res.code==1){
+        console.log("ssssssssasf")
+        var chart = that.selectComponent('#mychart-dom-bar').chart
+        var option = chart.getOption()
+        option.series[0]={
+          type: 'line',
+          symbol:'none',
+          smooth: true,
+          data:res.data.amplitude
+        }
+        chart.setOption(option)
 
-    //     var chart1 = that.selectComponent('#mychart-dom-bar1').chart
-    //     var option1 = chart1.getOption()
-    //     option1.series[0]={
-    //       type: 'scatter',
-    //       symbolSize:4,
-    //       data:res.data.phase
-    //     }
-    //     chart1.setOption(option1)
+        var chart1 = that.selectComponent('#mychart-dom-bar1').chart
+        var option1 = chart1.getOption()
+        option1.series[0]={
+          type: 'scatter',
+          symbolSize:4,
+          data:res.data.phase
+        }
+        chart1.setOption(option1)
 
-    //     that.setData({
-    //       time_num:app.fomatFloat(res.time,1)
-    //     })
-    //   }else{
-    //     // wx.showToast({
-    //     //   title: '发送未知错误！',
-    //     //   icon:'none'
-    //     // })
-    //   }
-    // })
+        that.setData({
+          time_num:app.fomatFloat(res.time,1)
+        })
+      }else{
+        // wx.showToast({
+        //   title: '发送未知错误！',
+        //   icon:'none'
+        // })
+      }
+    })
   },
 
   bindPickerChange: function (e) {
@@ -253,7 +253,7 @@ Page({
 
         setTimeout(() => {
           this.stopCollect(e)
-        }, 4000);
+        }, 30000);
 
 
 

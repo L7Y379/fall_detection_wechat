@@ -25,8 +25,8 @@ App({
   },
   globalData: {
     isconnected:false,
-    //HOST:'http://192.168.1.117:8888/',
-    HOST:'http://192.168.31.173:8888/',
+    HOST:'http://192.168.1.117:8888/',
+    //HOST:'http://192.168.31.173:8888/',
     train_data_list:[],
     test_data_list:[],
     join_data_type:0,//加入训练还是测试，0是训练，1是测试

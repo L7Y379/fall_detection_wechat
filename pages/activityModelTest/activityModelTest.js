@@ -389,7 +389,7 @@ Page({
 
   onLoad: function (options) {
     var that = this
-    console.log(1)
+    //console.log(1)
     wx.getSystemInfo({
       success: (result) => {
         const tabbarHeight = ( result.screenHeight - result.windowHeight - result.statusBarHeight )
@@ -402,7 +402,7 @@ Page({
     this.setData({
       treeData:app.globalData.ModeltreeList
     })
-    console.log(2)
+    //console.log(2)
     //接收服务器消息
     app.globalData.localSocket.onMessage(function(res) {
       //console.log(3)
@@ -419,24 +419,24 @@ Page({
           tip5:that.data.tip6,
           tip6:res.time[0]+"年"+res.time[1]+"月"+res.time[2]+"日"+res.time[3]+"点"+res.time[4]+"分"+res.time[5]+"秒"+res.predict
         })
-        // var chart = that.selectComponent('#mychart-dom-bar').chart
-        // var option = chart.getOption()
-        // option.series[0]={
-        //   type: 'line',
-        //   symbol:'none',
-        //   smooth: true,
-        //   data:res.data.amplitude
-        // }
-        // chart.setOption(option)
+    //     // var chart = that.selectComponent('#mychart-dom-bar').chart
+    //     // var option = chart.getOption()
+    //     // option.series[0]={
+    //     //   type: 'line',
+    //     //   symbol:'none',
+    //     //   smooth: true,
+    //     //   data:res.data.amplitude
+    //     // }
+    //     // chart.setOption(option)
 
-        // var chart1 = that.selectComponent('#mychart-dom-bar1').chart
-        // var option1 = chart1.getOption()
-        // option1.series[0]={
-        //   type: 'scatter',
-        //   symbolSize:4,
-        //   data:res.data.phase
-        // }
-        // chart1.setOption(option1)
+    //     // var chart1 = that.selectComponent('#mychart-dom-bar1').chart
+    //     // var option1 = chart1.getOption()
+    //     // option1.series[0]={
+    //     //   type: 'scatter',
+    //     //   symbolSize:4,
+    //     //   data:res.data.phase
+    //     // }
+    //     // chart1.setOption(option1)
         
         
       }else{

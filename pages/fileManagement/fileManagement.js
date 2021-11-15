@@ -251,14 +251,14 @@ Page({
           })
         }else{
           wx.showToast({
-            title: '发生未知错误！',
+            title: '获取文件信息失败',
             icon:'none'
           })
         }
       },fail(e){
         wx.hideLoading({})
         wx.showToast({
-          title: '发生未知错误！',
+          title: '获取文件信息失败',
           icon:'none'
         })
       }

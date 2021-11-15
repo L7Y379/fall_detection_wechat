@@ -77,7 +77,7 @@ Page({
         if(res.data.code == 1){
           var that = this
           that.setData({
-            link_msg:"已连接接收器"
+            link_msg:"连接接收器"
           })
           app.globalData.isconnected = true
           wx.showToast({
