@@ -138,7 +138,7 @@ Page({
       header:{
         'content-type':'application/x-www-form-urlencoded'
       },success:res=>{
-        wx.hideLoading({})
+        //wx.hideLoading({})
         console.log(res)
         if(res.data.code == 1){
           // that.globalData.treeData=res.data.data_dir
@@ -170,7 +170,7 @@ Page({
       header:{
         'content-type':'application/x-www-form-urlencoded'
       },success:res=>{
-        wx.hideLoading({})
+        //wx.hideLoading({})
         console.log(res)
         if(res.data.code == 1){
           if(res.data.modelTrain==2){
@@ -198,7 +198,7 @@ Page({
           })
         }
       },fail(e){
-        wx.hideLoading({})
+        //wx.hideLoading({})
         wx.showToast({
           title: '获取状态码失败！',
           icon:'none'

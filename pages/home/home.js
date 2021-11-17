@@ -73,7 +73,7 @@ Page({
         'content-type':'application/x-www-form-urlencoded'
       },success:res=>{
         console.log(res)
-        wx.hideLoading({})
+        //wx.hideLoading({})
         if(res.data.code == 1){
           var that = this
           that.setData({
@@ -92,7 +92,7 @@ Page({
           })
         }
       },fail(e){
-        wx.hideLoading({})
+        //wx.hideLoading({})
         app.globalData.isconnected = false
         wx.showToast({
           title: '连接失败！',
@@ -112,7 +112,7 @@ Page({
       header:{
         'content-type':'application/x-www-form-urlencoded'
       },success:res=>{
-        wx.hideLoading({})
+        //wx.hideLoading({})
         console.log(res)
         if(res.data.code == 1){
           if(res.data.modelTrain==2){
@@ -140,7 +140,7 @@ Page({
           })
         }
       },fail(e){
-        wx.hideLoading({})
+        //wx.hideLoading({})
         wx.showToast({
           title: '获取状态码失败！',
           icon:'none'
@@ -161,10 +161,10 @@ Page({
       header:{
         'content-type':'application/x-www-form-urlencoded'
       },success:res=>{
-        wx.hideLoading({})
+        //wx.hideLoading({})
         console.log(res)
       },fail(e){
-        wx.hideLoading({})
+        //wx.hideLoading({})
         wx.showToast({
           title: 'socket未连接！',
           icon:'none'
@@ -172,6 +172,34 @@ Page({
       }
     })
   },
+  // initSocket() {
+  //   let that = this
+  //   console.log(666)
+  //   app.globalData.localSocket = wx.connectSocket({
+      
+  //     url: 'ws://127.0.0.1:8887',
+  //   })
+  //   app.globalData.localSocket.onOpen(function(res) {
+  //     console.log('WebSocket连接已打开！readyState=' + app.globalData.localSocket.readyState)
+  //     console.log(res)
+  //   })
+  //   // that.globalData.localSocket.onClose(function(res) {
+  //   //   console.log('WebSocket连接已关闭！readyState=' + that.globalData.localSocket.readyState)
+  //   //   that.initSocket()
+  //   // })
+  //   // that.globalData.localSocket.onError(function(res) {
+  //   //   console.log('WebSocket连接已关闭,readyState=' + that.globalData.localSocket.readyState)
+  //   //   //that.initSocket()
+  //   // })
+    
+  //   //console.log(2)
+  //   app.globalData.localSocket.onMessage(function(res) {
+  //     //console.log(res)
+  //     //console.log(1)
+  //     app.globalData.callback(res)
+  //   })
+  //   //console.log(3)
+  // },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -187,6 +215,11 @@ Page({
     //console.log(readyState)
     if(readyState!=1){
       this.getSocket();
+      // setTimeout(() => {
+      //   this.initSocket();
+      // }, 1500);
+      
+      
     }
     this.getstates();
     

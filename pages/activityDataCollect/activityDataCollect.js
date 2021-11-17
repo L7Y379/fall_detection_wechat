@@ -3,6 +3,7 @@
 import * as echarts from '../../ec-canvas/echarts';
 const app = getApp()
 var chart
+var link=0
 
 var intt;
 function initChart(canvas, width, height, dpr) {
@@ -77,6 +78,7 @@ Page({
         })
       },
     })
+          
     
     //接收服务器消息
     app.globalData.localSocket.onMessage(function(res) {
@@ -233,6 +235,7 @@ Page({
       },success:res=>{     
         console.log(res)
         if(res.data.code == 1){
+          link=1
           clearInterval(intt);
           //时间重置
           that.setData({
@@ -244,6 +247,13 @@ Page({
           that.setData({
             tip:res.data.msg
           })
+
+          setTimeout(() => {
+            if(link==1){
+              this.stopCollect(e)
+            }
+          }, 30000);
+          
         }else{
           that.setData({
             tip:res.data.msg
@@ -251,9 +261,7 @@ Page({
         }
 
 
-        setTimeout(() => {
-          this.stopCollect(e)
-        }, 30000);
+        
 
 
 
@@ -268,6 +276,7 @@ Page({
   },
 
   stopCollect:function(e){
+    link=0
     var isconnected = app.globalData.isconnected
     console.log(isconnected)
     if(isconnected){
@@ -301,7 +310,11 @@ Page({
           that.setData({
             tip:res.data.msg
           })
-
+          wx.showToast({
+            title: '正在停止采集',
+            icon:'loading',
+            duration: 2000,
+          })
         }else{
           that.setData({
             tip:'结束操作失败！'
@@ -340,7 +353,7 @@ Page({
       header:{
         'content-type':'application/x-www-form-urlencoded'
       },success:res=>{
-        wx.hideLoading({})
+        //wx.hideLoading({})
         console.log(res)
         if(res.data.code == 1){
           if(res.data.modelTrain==2){
@@ -368,7 +381,7 @@ Page({
           })
         }
       },fail(e){
-        wx.hideLoading({})
+        //wx.hideLoading({})
         wx.showToast({
           title: '获取状态码失败！',
           icon:'none'

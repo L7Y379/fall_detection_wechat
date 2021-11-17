@@ -52,7 +52,7 @@
 </View>
 <view style="width: 750rpx;height:{{SystemInfo.screenHeight - SystemInfo.safeArea.bottom}}px;position: fixed;bottom: 0;background: #ffffff;"></view>
 
-<view class="mask" hidden="{{!showMask}}" bindtap="hiddenMaskBtn"></view>
+<!-- <view class="mask" hidden="{{!showMask}}" bindtap="hiddenMaskBtn"></view>
 <view class="storageFile_box" hidden="{{!showMask}}">
   <treeView model='{{ treeData }}' bind:tapitem='tapItem'></treeView>
-</view>
+</view> -->

@@ -18,6 +18,7 @@ App({
       wx.setStorageSync('setting_info', setting_info)
     }
     //console.log(1)
+    console.log(555)
     this.initSocket();
     //this.getFileTree()
 
@@ -39,20 +40,26 @@ App({
 
   initSocket() {
     let that = this
+    console.log(666)
     that.globalData.localSocket = wx.connectSocket({
-      url: 'ws://127.0.0.1:8887',
+      
+      //url: 'ws://127.0.0.1:8887',
+      url: 'ws://192.168.31.173:8887',
+      
     })
     that.globalData.localSocket.onOpen(function(res) {
       console.log('WebSocket连接已打开！readyState=' + that.globalData.localSocket.readyState)
       console.log(res)
     })
-    that.globalData.localSocket.onError(function(res) {
-      console.log('readyState=' + that.globalData.localSocket.readyState)
-    })
     that.globalData.localSocket.onClose(function(res) {
       console.log('WebSocket连接已关闭！readyState=' + that.globalData.localSocket.readyState)
       that.initSocket()
     })
+    that.globalData.localSocket.onError(function(res) {
+      console.log('WebSocket连接已关闭,readyState=' + that.globalData.localSocket.readyState)
+      //that.initSocket()
+    })
+    
     //console.log(2)
     that.globalData.localSocket.onMessage(function(res) {
       //console.log(res)
