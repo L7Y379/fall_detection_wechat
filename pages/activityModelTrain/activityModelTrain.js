@@ -285,6 +285,7 @@ Page({
     const HOST=app.globalData.HOST
     console.log(HOST + '/filemanagement/tree')
     wx.request({
+      timeout:5000,
       url: HOST + '/filemanagement/tree',
       method:"GET",
       header:{
@@ -316,6 +317,7 @@ Page({
     const HOST = app.globalData.HOST
     console.log(HOST + '/getstates')
     wx.request({
+      timeout:5000,
       url: HOST + '/getstates',
       method:"GET",
       header:{

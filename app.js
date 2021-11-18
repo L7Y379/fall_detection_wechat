@@ -18,7 +18,7 @@ App({
       wx.setStorageSync('setting_info', setting_info)
     }
     //console.log(1)
-    console.log(555)
+    //console.log(555)
     this.initSocket();
     //this.getFileTree()
 
@@ -40,11 +40,12 @@ App({
 
   initSocket() {
     let that = this
-    console.log(666)
+    //console.log(666)
     that.globalData.localSocket = wx.connectSocket({
       
       //url: 'ws://127.0.0.1:8887',
-      url: 'ws://192.168.31.173:8887',
+      //url: 'ws://192.168.31.173:8887',
+      url: 'ws://192.168.1.117:8887',
       
     })
     that.globalData.localSocket.onOpen(function(res) {

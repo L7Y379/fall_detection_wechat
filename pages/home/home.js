@@ -107,6 +107,7 @@ Page({
     const HOST = app.globalData.HOST
     console.log(HOST + '/getstates')
     wx.request({
+      timeout:5000,
       url: HOST + '/getstates',
       method:"GET",
       header:{
@@ -157,6 +158,7 @@ Page({
     console.log(HOST + '/get_socket')
     wx.request({
       url: HOST + '/get_socket',
+      timeout:10000,
       method:"GET",
       header:{
         'content-type':'application/x-www-form-urlencoded'

@@ -341,6 +341,7 @@ Page({
     const HOST = app.globalData.HOST
     console.log(HOST + '/getstates')
     wx.request({
+      timeout:5000,
       url: HOST + '/getstates',
       method:"GET",
       header:{
