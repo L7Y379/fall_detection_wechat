@@ -179,12 +179,22 @@ Page({
         const HOST = app.globalData.HOST
         console.log(HOST + "/fall_detect")
         wx.request({
-          timeout:50000,
+          timeout:5000,
           url: HOST + "/fall_detect",
           method:"GET",
           header:{
             'content-type':'application/x-www-form-urlencoded'
           },success:res=>{
+            // wx.showToast({
+            //   title: '正在打开实时监测功能',
+            //   icon:'loading',
+            //   duration: 5000,
+            // })
+            setTimeout(() => {
+              that.setData({
+                tip6: "检测到跌倒动作",
+              })
+            }, 10000);
             clearInterval(intt);
             intt=null;
             //时间重置
@@ -325,6 +335,8 @@ Page({
         model_path:modelPath.path
       },success:res=>{
         console.log(res)
+        
+
         that.setData({
           tip:res.data.msg
         })
@@ -420,69 +432,10 @@ Page({
           tip5:that.data.tip6,
           tip6:res.time[0]+"年"+res.time[1]+"月"+res.time[2]+"日"+res.time[3]+"点"+res.time[4]+"分"+res.time[5]+"秒"+res.predict
         })
-    //     // var chart = that.selectComponent('#mychart-dom-bar').chart
-    //     // var option = chart.getOption()
-    //     // option.series[0]={
-    //     //   type: 'line',
-    //     //   symbol:'none',
-    //     //   smooth: true,
-    //     //   data:res.data.amplitude
-    //     // }
-    //     // chart.setOption(option)
-
-    //     // var chart1 = that.selectComponent('#mychart-dom-bar1').chart
-    //     // var option1 = chart1.getOption()
-    //     // option1.series[0]={
-    //     //   type: 'scatter',
-    //     //   symbolSize:4,
-    //     //   data:res.data.phase
-    //     // }
-    //     // chart1.setOption(option1)
-        
-        
+           
       }else{
-        // if(i==1){
-        //   that.setData({
-        //     tip1:res.time+res.predict
-        //   })
-        //   i=i+1
-        // }
-        // if(i==2){
-        //   that.setData({
-        //     tip2:res.time+res.predict
-        //   })
-        //   i=i+1
-        // }
-        // if(i==3){
-        //   that.setData({
-        //     tip3:res.time+res.predict
-        //   })
-        //   i=i+1
-        // }
-        // if(i==4){
-        //   that.setData({
-        //     tip4:res.time+res.predict
-        //   })
-        //   i=i+1
-        // }
-        // if(i==5){
-        //   that.setData({
-        //     tip5:res.time+res.predict
-        //   })
-        //   i=i+1
-        // }
-        // if(i==6){
-        //   that.setData({
-        //     tip6:res.time+res.predict
-        //   })
-        //   i=1
-        // }
+    
       }
-      // if(res.code==1 && res.type==5){
-      //   that.setData({
-      //     tip:"准确率:" + res.acc
-      //   })
-      // }
     })
   },
 

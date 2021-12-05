@@ -111,42 +111,49 @@ Page({
     });
     var that = this
     console.log(paths)
-    wx.showLoading({})
+    //wx.showLoading({})
     const HOST = app.globalData.HOST
     console.log(HOST + '/filemanagement/deletefile')
-    wx.request({
-      url: HOST + '/filemanagement/deletefile',
-      method:"GET",
-      header:{
-        'content-type':'application/x-www-form-urlencoded'
-      },data:{
-        paths:JSON.stringify({paths:paths})
-      },success:res=>{
-        wx.hideLoading({})
-        console.log(res)
-        if(res.data.code == 1){
-          var newdatList = []
-          datList.forEach(element => {
-            if(element.selected==false){
-              newdatList.push(element)
+    wx.showModal({
+      content:'确定要删除文件吗？',
+      success:res=>{
+        if(res.confirm){
+        wx.request({
+          url: HOST + '/filemanagement/deletefile',
+          method:"GET",
+          header:{
+            'content-type':'application/x-www-form-urlencoded'
+          },data:{
+            paths:JSON.stringify({paths:paths})
+          },success:res=>{
+            wx.hideLoading({})
+            console.log(res)
+            if(res.data.code == 1){
+              var newdatList = []
+              datList.forEach(element => {
+                if(element.selected==false){
+                  newdatList.push(element)
+                }
+              });
+              that.setData({
+                datList:newdatList,
+                is_select_all:false
+              })
+            }else{
+              wx.showToast({
+                title: '发生未知错误！',
+                icon:'none'
+              })
             }
-          });
-          that.setData({
-            datList:newdatList,
-            is_select_all:false
-          })
-        }else{
-          wx.showToast({
-            title: '发生未知错误！',
-            icon:'none'
-          })
-        }
-      },fail(e){
-        wx.hideLoading({})
-        wx.showToast({
-          title: '发生未知错误！',
-          icon:'none'
+          },fail(e){
+            wx.hideLoading({})
+            wx.showToast({
+              title: '发生未知错误！',
+              icon:'none'
+            })
+          }
         })
+        }
       }
     })
   },

@@ -2,8 +2,8 @@
 <view>
   <view class="mode_selection">
     <view class="mode_view {{mode_index==0?'activity':''}}" bindtap="change_mode" data-mode_index="0">实时监测</view>
-    <view class="mode_view {{mode_index==1?'activity':''}}" bindtap="change_mode" data-mode_index="1">单数据检测</view>
-    <view></view>
+    <!-- <view class="mode_view {{mode_index==1?'activity':''}}" bindtap="change_mode" data-mode_index="1">单数据检测</view>
+    <view></view> -->
   </view>
 </view>
 <view hidden="{{mode_index!=0}}">

@@ -19,7 +19,7 @@
       </view>
       <view class="fc_item" bindtap="activity_model_test">
         <image src="../../images/home/test.png"></image>
-        <text>模型测试</text>
+        <text>实时监测</text>
       </view>
     </view>
   </view>

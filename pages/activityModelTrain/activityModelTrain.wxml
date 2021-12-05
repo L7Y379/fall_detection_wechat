@@ -26,9 +26,9 @@
   </view>
   <view style="width:750rpx;height:30rpx;background:#f5f5f5"></view>
   <view class="tip_info" >
-      <text style="width:190rpx">样本数：{{len_dir}}</text>
+      <text style="width:180rpx">样本数：{{len_dir}}</text>
       <text style="width:300rpx">训练进度：{{epoch}}/{{epochs}}</text>
-      <text style="width:210rpx">准确率：{{acc}}%</text>
+      <text style="width:230rpx">准确率：{{acc}}%</text>
   </view>
   <view class="console">
       <view>Console:</view>

@@ -4,16 +4,16 @@ App({
     if(wx.getStorageSync('setting_info')==""){
       var setting_info = {
         //'server_ip':"192.168.1.117",
-        'server_ip':"192.168.31.173",
-        'server_port':8888,
-        'Rx_ip': "211.83.111.213",
-        'Rx_port':6662,
-        'Rx_username':"rtlab420",
-        'Rx_password':"root",
-        'Tx_antenna_num':31,
-        'Rx_antenna_num':3,
-        'frequency':100,
-        'frequenc':101
+        // 'server_ip':"192.168.31.173",
+        // 'server_port':8888,
+        // 'Rx_ip': "211.83.111.213",
+        // 'Rx_port':6662,
+        // 'Rx_username':"rtlab420",
+        // 'Rx_password':"root",
+        // 'Tx_antenna_num':31,
+        // 'Rx_antenna_num':3,
+        // 'frequency':100,
+        // 'frequenc':101
       }
       wx.setStorageSync('setting_info', setting_info)
     }
@@ -26,8 +26,7 @@ App({
   },
   globalData: {
     isconnected:false,
-    HOST:'http://192.168.1.117:8888/',
-    //HOST:'http://192.168.31.173:8888/',
+    HOST:'http://192.168.31.173:8889/',
     train_data_list:[],
     test_data_list:[],
     join_data_type:0,//加入训练还是测试，0是训练，1是测试
@@ -41,12 +40,8 @@ App({
   initSocket() {
     let that = this
     //console.log(666)
-    that.globalData.localSocket = wx.connectSocket({
-      
-      //url: 'ws://127.0.0.1:8887',
-      //url: 'ws://192.168.31.173:8887',
-      url: 'ws://192.168.1.117:8887',
-      
+    that.globalData.localSocket = wx.connectSocket({   
+      url: 'ws://192.168.31.173:8887',    
     })
     that.globalData.localSocket.onOpen(function(res) {
       console.log('WebSocket连接已打开！readyState=' + that.globalData.localSocket.readyState)

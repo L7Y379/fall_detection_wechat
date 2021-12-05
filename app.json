@@ -1,20 +1,15 @@
 {
   "pages": [
     "pages/home/home",
-    "pages/index/index",
     "pages/activityDataCollect/activityDataCollect",
     "pages/treeView/treeView",
-    "pages/contentList_fileSelect/contentList_fileSelect",
     "pages/fileSelect/fileSelect",
     "pages/datList/datList",
     "pages/activityModelTest/activityModelTest",
     "pages/activityModelTrain/activityModelTrain",
     "pages/setting/setting",
-    "pages/modelTrain/modelTrain",
-    "pages/modelList/modelList",
     "pages/fileManagement/fileManagement",
     "pages/fileDetail/fileDetail",
-    "pages/breathTest/breath_test",
     "pages/pre_data/pre_data"
   ],
   "networkTimeout": {
